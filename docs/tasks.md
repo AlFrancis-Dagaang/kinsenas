@@ -100,3 +100,5 @@ Status: done
 - [x] Notes: an optional note (up to 200 characters) on entries, debts, goals, installments and recurring bills, set in each create/edit form and shown as a muted line in the lists. Setup is unchanged
 - [x] Existing rows keep working with no balance, budget or entry changes; the migration is additive only; unit tests cover installment progress and the outside-transfer balance effect, and a transfer to a name can't make a balance negative
 - [x] The account history page (Accounts, per account) shows an entry's note as a muted line under its details
+- [x] Loading: every page's Suspense fallback shows a centered 12-block pixel loading bar (a clay run moving across the blocks) instead of the "Loading…" text; still, with a screen-reader label, when the user prefers reduced motion
+- [x] App icon: a row of 5 square blocks, 3 white and 2 darker orange, on the clay background, in `icon-192.png`, `icon-512.png`, `apple-icon.png` and `favicon.ico`, inside the maskable safe zone

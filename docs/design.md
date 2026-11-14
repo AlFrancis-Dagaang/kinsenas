@@ -40,6 +40,8 @@ Theme follows the system light/dark setting, with a manual toggle.
 - Completed bars turn clay. Over-budget bars use clay diagonal stripes.
 - When a bill cycle, debt or goal completes, the bar flashes briefly, like clearing a line.
 - Respect reduced-motion settings.
+- Loading: the same 12 blocks, centered, with a clay run moving across them (`LoadingBar`), instead of "Loading…" text.
+- App icon: 5 blocks in a row, 3 white and 2 darker orange, on clay.
 
 ## Overview page
 Four stat cards (net worth, income this month, expenses this month, bills due in 7 days), then mini tables for accounts, upcoming bills, goals, debts and recent activity.
