@@ -38,7 +38,7 @@ async function AccountHistory({ params, searchParams }: { params: Promise<{ id: 
     // shortcut: loads every entry of the account, add paging when one account passes a few thousand rows.
     rows: await tx
       .select({
-        id: transactions.id, type: transactions.type, amount: transactions.amount, date: transactions.date, payee: transactions.payee,
+        id: transactions.id, type: transactions.type, amount: transactions.amount, date: transactions.date, payee: transactions.payee, note: transactions.note,
         accountId: transactions.accountId, toAccountId: transactions.toAccountId, account: accounts.name, toAccount: toAccounts.name, toName: transactions.toName,
         category: categories.name, billId: transactions.billId, debtId: transactions.debtId, goalId: transactions.goalId, installmentId: transactions.installmentId,
       })
@@ -86,7 +86,10 @@ async function AccountHistory({ params, searchParams }: { params: Promise<{ id: 
                 return (
                   <TableRow key={row.id}>
                     <TableCell className="pl-4 tabular-nums">{row.date}</TableCell>
-                    <TableCell>{details}</TableCell>
+                    <TableCell>
+                      {details}
+                      {row.note && <p className="text-sm text-muted-foreground">{row.note}</p>}
+                    </TableCell>
                     <TableCell className="text-right tabular-nums">{row.change > 0 ? "+" : "−"}{money(Math.abs(row.change))}</TableCell>
                     <TableCell className="pr-4 text-right tabular-nums">{money(row.balanceAfter)}</TableCell>
                   </TableRow>
