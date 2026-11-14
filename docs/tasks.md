@@ -102,3 +102,5 @@ Status: done
 - [x] The account history page (Accounts, per account) shows an entry's note as a muted line under its details
 - [x] Loading: every page's Suspense fallback shows a centered 12-block pixel loading bar (a clay run moving across the blocks) instead of the "Loading…" text; still, with a screen-reader label, when the user prefers reduced motion
 - [x] App icon: a row of 5 square blocks, 3 white and 2 darker orange, on the clay background, in `icon-192.png`, `icon-512.png`, `apple-icon.png` and `favicon.ico`, inside the maskable safe zone
+- [x] Sign-in page: a centered card with the app icon, the name in the serif font, the tagline and a clay "Continue with Google" button, in light and dark mode
+- [x] Sign out: a "Sign out" button at the bottom of the sidebar (icon only in the phone top bar) ends the session and returns to the sign-in page
