@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Suspense } from "react";
 import { cn } from "cn";
+import { SignOutButton } from "@/components/sign-out-button";
 import { ThemeToggle } from "@/components/theme-toggle";
 
 const pages = [
@@ -29,6 +30,7 @@ export function AppSidebar() {
           <CurrentLinks />
         </Suspense>
       </nav>
+      <SignOutButton />
       <ThemeToggle />
     </aside>
   );
