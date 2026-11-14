@@ -99,3 +99,4 @@ Status: done
 - [x] Outside transfers: a transfer's "To" accepts one of your accounts or a free-text name. A transfer to a name takes the amount from the paying account, so net worth drops, shows in Activity as "Account → name", and does not count in Income this month, Expenses this month or Budget. Transfers between your own accounts work as before
 - [x] Notes: an optional note (up to 200 characters) on entries, debts, goals, installments and recurring bills, set in each create/edit form and shown as a muted line in the lists. Setup is unchanged
 - [x] Existing rows keep working with no balance, budget or entry changes; the migration is additive only; unit tests cover installment progress and the outside-transfer balance effect, and a transfer to a name can't make a balance negative
+- [x] The account history page (Accounts, per account) shows an entry's note as a muted line under its details
