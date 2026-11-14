@@ -2,6 +2,7 @@ import { redirect } from "next/navigation";
 import { type ReactNode, Suspense } from "react";
 import { AppSidebar } from "@/components/app-sidebar";
 import { CurrencyProvider } from "@/components/currency-provider";
+import { LoadingBar } from "@/components/loading-bar";
 import { getSettings } from "@/lib/settings";
 
 export default function AppLayout({ children }: LayoutProps<"/">) {
@@ -10,7 +11,7 @@ export default function AppLayout({ children }: LayoutProps<"/">) {
       <AppSidebar />
       {/* min-w-0 lets wide tables scroll inside their panel instead of widening the page */}
       <main className="min-w-0 flex-1 px-4 py-6 md:px-10 md:py-10">
-        <Suspense fallback={<p className="text-muted-foreground">Loading…</p>}>
+        <Suspense fallback={<LoadingBar />}>
           <SetupGate>{children}</SetupGate>
         </Suspense>
       </main>

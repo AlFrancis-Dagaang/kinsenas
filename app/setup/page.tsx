@@ -1,5 +1,6 @@
 import { redirect } from "next/navigation";
 import { Suspense } from "react";
+import { LoadingBar } from "@/components/loading-bar";
 import { PageHeader } from "@/components/page-header";
 import { getSettings } from "@/lib/settings";
 import { SetupForm } from "./setup-form";
@@ -8,7 +9,7 @@ export default function SetupPage() {
   return (
     <main className="mx-auto max-w-3xl px-4 py-10">
       <PageHeader title="Set up keep tabs on" description="A few minutes now, and your overview is ready." />
-      <Suspense fallback={<p className="text-muted-foreground">Loading…</p>}>
+      <Suspense fallback={<LoadingBar />}>
         <Setup />
       </Suspense>
     </main>

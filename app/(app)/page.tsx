@@ -2,6 +2,7 @@ import { and, asc, desc, eq, gt, sql, sum } from "drizzle-orm";
 import { alias } from "drizzle-orm/pg-core";
 import Link from "next/link";
 import { type ReactNode, Suspense } from "react";
+import { LoadingBar } from "@/components/loading-bar";
 import { PageHeader } from "@/components/page-header";
 import { PixelBar } from "@/components/pixel-bar";
 import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
@@ -19,7 +20,7 @@ export default function OverviewPage() {
   return (
     <>
       <PageHeader title="Overview" description="Your money at a glance." />
-      <Suspense fallback={<p className="text-muted-foreground">Loading…</p>}>
+      <Suspense fallback={<LoadingBar />}>
         <Overview />
       </Suspense>
     </>

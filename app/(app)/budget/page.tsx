@@ -1,6 +1,7 @@
 import { asc, eq } from "drizzle-orm";
 import Link from "next/link";
 import { Suspense } from "react";
+import { LoadingBar } from "@/components/loading-bar";
 import { PageHeader } from "@/components/page-header";
 import { PixelBar } from "@/components/pixel-bar";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
@@ -16,7 +17,7 @@ export default function BudgetPage() {
   return (
     <>
       <PageHeader title="Budget" description="This month's spending against your limits." />
-      <Suspense fallback={<p className="text-muted-foreground">Loading…</p>}>
+      <Suspense fallback={<LoadingBar />}>
         <Budget />
       </Suspense>
     </>

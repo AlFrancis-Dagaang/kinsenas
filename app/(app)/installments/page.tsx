@@ -1,6 +1,7 @@
 import { asc, count, eq, sql } from "drizzle-orm";
 import Link from "next/link";
 import { Suspense } from "react";
+import { LoadingBar } from "@/components/loading-bar";
 import { PageHeader } from "@/components/page-header";
 import { PixelBar } from "@/components/pixel-bar";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
@@ -15,7 +16,7 @@ import { DeleteInstallment, InstallmentForm, PayInstallment } from "./installmen
 
 export default function InstallmentsPage() {
   return (
-    <Suspense fallback={<p className="text-muted-foreground">Loading…</p>}>
+    <Suspense fallback={<LoadingBar />}>
       <Installments />
     </Suspense>
   );

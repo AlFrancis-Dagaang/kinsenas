@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Fragment, Suspense } from "react";
 import { cn } from "cn";
 import { DateFilter } from "@/components/date-filter";
+import { LoadingBar } from "@/components/loading-bar";
 import { PageHeader } from "@/components/page-header";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { accounts, categories, transactions, type Transaction } from "@/db/schema";
@@ -49,7 +50,7 @@ const columns: Record<"all" | Transaction["type"], { head: string; cell: (row: R
 
 export default function ActivityPage({ searchParams }: { searchParams: Search }) {
   return (
-    <Suspense fallback={<p className="text-muted-foreground">Loading…</p>}>
+    <Suspense fallback={<LoadingBar />}>
       <Activity searchParams={searchParams} />
     </Suspense>
   );

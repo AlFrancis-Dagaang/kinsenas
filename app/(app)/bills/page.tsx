@@ -1,6 +1,7 @@
 import { and, asc, eq, gt, sum } from "drizzle-orm";
 import Link from "next/link";
 import { Suspense } from "react";
+import { LoadingBar } from "@/components/loading-bar";
 import { PageHeader } from "@/components/page-header";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { bills, transactions } from "@/db/schema";
@@ -14,7 +15,7 @@ import { getMoney } from "@/lib/settings";
 
 export default function BillsPage() {
   return (
-    <Suspense fallback={<p className="text-muted-foreground">Loading…</p>}>
+    <Suspense fallback={<LoadingBar />}>
       <Bills />
     </Suspense>
   );

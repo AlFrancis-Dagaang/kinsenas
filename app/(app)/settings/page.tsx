@@ -1,5 +1,6 @@
 import { asc, eq } from "drizzle-orm";
 import { Suspense } from "react";
+import { LoadingBar } from "@/components/loading-bar";
 import { PageHeader } from "@/components/page-header";
 import { Button } from "@/components/ui/button";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
@@ -15,7 +16,7 @@ export default function SettingsPage() {
   return (
     <>
       <PageHeader title="Settings" description="Currency and categories." />
-      <Suspense fallback={<p className="text-muted-foreground">Loading…</p>}>
+      <Suspense fallback={<LoadingBar />}>
         <div className="grid gap-8">
           <Currency />
           <Categories />

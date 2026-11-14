@@ -47,6 +47,7 @@
   /* pixel progress bars: blocks drop in, a completed bar flashes like a cleared line */
   --animate-drop: drop 300ms ease-out both;
   --animate-flash: flash 250ms steps(1) 4;
+  --animate-load: load 1200ms steps(1) infinite;
   @keyframes drop {
     from {
       opacity: 0;
@@ -56,6 +57,14 @@
   @keyframes flash {
     50% {
       opacity: 0.2;
+    }
+  }
+  @keyframes load {
+    0% {
+      background: var(--clay);
+    }
+    40% {
+      background: var(--border);
     }
   }
 }

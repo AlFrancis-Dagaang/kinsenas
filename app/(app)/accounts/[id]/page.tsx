@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import { z } from "zod";
 import { DateFilter } from "@/components/date-filter";
+import { LoadingBar } from "@/components/loading-bar";
 import { PageHeader } from "@/components/page-header";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { accounts, categories, transactions } from "@/db/schema";
@@ -19,7 +20,7 @@ type Search = Promise<{ from?: string; to?: string }>;
 
 export default function AccountPage({ params, searchParams }: { params: Promise<{ id: string }>; searchParams: Search }) {
   return (
-    <Suspense fallback={<p className="text-muted-foreground">Loading…</p>}>
+    <Suspense fallback={<LoadingBar />}>
       <AccountHistory params={params} searchParams={searchParams} />
     </Suspense>
   );

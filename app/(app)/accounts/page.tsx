@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Suspense } from "react";
+import { LoadingBar } from "@/components/loading-bar";
 import { PageHeader } from "@/components/page-header";
 import { Table, TableBody, TableCell, TableFooter, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { getUserId } from "@/lib/auth/server";
@@ -16,7 +17,7 @@ export default function AccountsPage() {
       <PageHeader title="Accounts" description="Every place your money sits.">
         <AccountForm />
       </PageHeader>
-      <Suspense fallback={<p className="text-muted-foreground">Loading…</p>}>
+      <Suspense fallback={<LoadingBar />}>
         <AccountsTable />
       </Suspense>
     </>
